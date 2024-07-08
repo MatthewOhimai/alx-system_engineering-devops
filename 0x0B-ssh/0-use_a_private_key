@@ -1,0 +1,5 @@
+#!/bin/bash
+# Script to connect to a server using a private key with ssh
+# Using single-character flags and no -l flag
+
+ssh -i ~/.ssh/school ubuntu@server01
