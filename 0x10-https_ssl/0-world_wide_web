@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Function to get subdomain information
+get_subdomain_info() {
+	subdomain=$1
+	domain=$2
+	dig_output=$(dig "$subdomain.$domain" | grep -A1 'ANSWER SECTION:')
+	record_type=$(echo "$dig_output" | awk 'NR==2 {print $4}')
+	destination=$(echo "$dig_output" | awk 'NR==2 {print $5}')
+	echo "The subdomain $subdomain is a $record_type record and points to $destination"
+}
+
+# Check if at least the domain argument is provided
+if [ -z "$1" ]; then
+	echo "Usage: $0 domain [subdomain]"
+	exit 1
+fi
+
+domain=$1
+subdomain=$2
+
+# When both domain and subdomain parameters are provided
+if [ -n "$subdomain" ]; then
+	get_subdomain_info "$subdomain" "$domain"
+else
+	# When only the domain parameter is provided
+	get_subdomain_info "www" "$domain"
+	get_subdomain_info "lb-01" "$domain"
+	get_subdomain_info "web-01" "$domain"
+	get_subdomain_info "web-02" "$domain"
+fi
