@@ -1,4 +1,4 @@
-#!/ur/bin/env bash
+#!/usr/bin/env bash
 # Solving issues using docker via ubuntu
 # The apache server sholud return Hello Holberton when querying the root.
 
