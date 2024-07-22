@@ -1,3 +1,5 @@
+# What is a Firewall?
+
 A firewall is a critical component of network security, acting as a barrier that controls and monitors incoming and outgoing network traffic based on predetermined security rules. Its primary purpose is to establish a protective boundary between a trusted internal network and an untrusted external network, such as the internet, to prevent unauthorized access and cyber-attacks. Firewalls can be implemented as hardware, software, or a combination of both, and they come in various types, each suited to different security needs and environments. 
 
 ## History and Evolution of Firewalls
