@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Fetches and displays TODO list progress for a given employee ID using a REST API.
+Fetches and displays TODO list progress 
+for a given employee ID using a REST API.
 """
 
 import requests
@@ -35,7 +36,8 @@ def get_employee_info(employee_id):
 
     # Display the TODO list progress
     print(
-        f"Employee {employee_name} is done with tasks({number_of_done_tasks}/{total_tasks}):"
+        f"Employee {employee_name} is done
+ with tasks({number_of_done_tasks}/{total_tasks}):"
     )
     for task in done_tasks:
         print(f"\t {task.get('title')}")
